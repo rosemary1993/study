@@ -1,0 +1,33 @@
+.ipt-txt { width: 250px; height: 18px; line-height: 18px; padding: 7px 0 7px 10px;
+	       border: 1px solid #c6cfd6; background-color: #ffffff; vertical-align: top;
+	       font-family: Arial,SimSun; color: #333333; -moz-box-shadow: 1px 1px 2px rgba(204, 204, 204, 0.5) inset;  
+	       -webkit-box-shadow: 1px 1px 2px rgba(204, 204, 204, 0.5) inset; box-shadow: 1px 1px 2px rgba(204, 204, 204, 0.5) inset;
+	        *margin-top: -1px; *margin-bottom: -1px; }
+.ipt-txt-defa { color: #999999; }
+.ipt-txt-user { padding-left: 32px;padding-top: 10px }
+.ipt-txt-pwd { padding-left: 32px; }
+.ipt-check { margin-right: 5px; width: 13px; height: 13px; overflow: hidden;
+             vertical-align: -2px; *vertical-align: middle; }
+.icon-user .icon-pwd { position: absolute; left: 10px; top: 6px; width: 22px; height: 22px; overflow: hidden; }
+.icon-user { background-position: -28px -61px; }
+.icon-pwd { background-position: -28px -99px; }
+ .form-item { position: relative; margin-bottom: 16px; }
+ .ipt-tips { position: absolute; height: 34px; line-height: 34px; left: 34px; top: 0px; color: #999999; white-space: nowrap;font-size: 13px; }
+.form-item-fg { margin: 8px 0; text-align: right; }
+.form-item-fg  { float: left; color: #888888; }
+.form-tips { position: static; }
+.form-item-fg { padding-bottom: 0; margin: 0 0 8px; color: #666666; }
+.form-item-fg  { float: left; color: #888888; }
+.form-item-fg .form-tips { position: static; }
+.btn-submit { display: block; width: 284px; height: 36px; text-align: center; line-height: 36px; 
+	          background-color: #3990d7; color: #ffffff !important; font-size: 16px; font-family: \5FAE\8F6F\96C5\9ED1;
+	          outline: none; border: 0 none; cursor: pointer; -moz-border-radius: 3px; -webkit-border-radius: 3px;
+	          border-radius: 3px; -moz-box-shadow: 0 -2px 2px #3383cf inset; 
+	          -webkit-box-shadow: 0 -2px 2px #3383cf inset; box-shadow: 0 -2px 2px #3383cf inset; }
+.form-item-btn { padding-bottom: 10px; margin-top: 45px}
+.ipt-tips { position: absolute; height: 34px; line-height: 34px; left: 34px; top: 0px; color: #999999; 
+	        white-space: nowrap; }
+.trig-link { color: #2371c8; }
+.trig-link { position: relative; top: 1px; }
+.trig-link { display: inline !important; margin-top: 0 !important; }
+.tishi{font-size: 12px ;padding-top: 20px}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>登陆界面</title>
+	<meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="login.css">
+	
+</head>
+<body>
+<div class="form-div" >
+	<form  method="post" class="myForm" action="login.php" method="post" >
+
+	    <div class="form-item">
+	        <i class="icon-user"></i>
+	        <input name="username" id="username" class="ipt-txt ipt-txt-defa ipt-txt-user" type="text" maxlength="24"  autocomplete="off" placeholder="用户名/手机/已验证邮箱" />
+	         <font color="red" size="2" id="hint" class="tishi"></font>
+	    </div>	    
+	    <div class="form-item">
+	        <i class="icon-pwd"></i>
+	        <input id="pwd" name="password" class="ipt-txt ipt-txt-pwd" type="password" autocomplete="off"/>
+	       <span class="ipt-tips" id='pwd_tip'>密码</span>
+	    </div>                                                             
+        <div class="form-item-fg">
+            <span class="auto"><input name='remember' class="ipt-check" type="checkbox" value="yes" id="remember"/><label for="remember" >下次自动登录</label></span>
+            <a class="trig-link" href="#">忘记密码？</a>
+        </div>
+        <div class="form-item-btn">
+            <input class="btn-submit" type="button" id="butt"value="登 录" />
+        </div>
+    </form>
+</div>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+    $("#pwd").focus(function(){
+    	$("#pwd_tip").text("");
+    })
+    $("#pwd").blur(function(){
+    	if (!$("#pwd").val()) 
+    		{$("#pwd_tip").text("密码");}
+    })
+	$(function(){
+	$("#butt").click(function(){
+		$.ajax({
+			type: 'post',
+			url:'logincontrol.php?a=login',
+			datatype:'json',
+			data: {username:$("#username").val(),password:$("#pwd").val(),remember:($("#remember")[0].checked ? 'yes' : 'no')},
+            success:function(datas)
+            {
+              if(datas==0)
+              {$("#hint").html("输入不能为空");}
+              else if(datas==1)
+               {$("#hint").html("账户不存在");}
+              else if(datas==2)
+                {$("#hint").html("密码错误");}
+              else if(datas=='succ')
+                {
+                	location.href='index.php';
+                }
+                
+            }
+           });         
+	    });
+    })
+	</script>
+</body>
+</html>
