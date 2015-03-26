@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="jquery.js"></script>
+</head>
+<body>
+<p>验证码：<input type="text" class="input" id="code_num" name="code_num" maxlength="4" />  
+<img src="verification.php" id="getcode_num" title="看不清，点击换一张" align="absmiddle"></p> 
+<p><input type="button" class="btn" id="chk_num" value="提交" /></p> 
+ <script type="text/javascript">
+ //数字验证 
+    $("#getcode_num").click(function(){ 
+        $(this).attr("src",'verification.php?' + Math.random()); 
+    })
+    $("#chk_num").click(function(){ 
+        var code_num = $("#code_num").val(); 
+        $.post("chk_code.php?act=num",
+        	   {code:code_num},
+        	   function(msg)
+        	   { 
+                  if(msg==1){ 
+                      alert("验证码正确！"); }
+                  else{ 
+                      alert("验证码错误！"); } 
+        }); 
+    })
+
+ </script>
+</body>
+
+
+</html>
